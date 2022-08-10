@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         view.startAnimation(rotateAnimation);
     }
 
+    /**
+     * 1. 自定义属性动画练习
+     * @param view
+     */
     public void startAnim(View view) {
         ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", 0, 500);
         // 动画持续3s

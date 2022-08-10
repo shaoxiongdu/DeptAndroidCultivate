@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--创建一个styleable，命名推荐与自定义View一致-->
+    <declare-styleable name="ChargeView">
+        <!--慢充背景颜色，format="color"需要写对-->
+        <attr name="charge_slow_bg_color" format="color" />
+        <!--快充背景颜色-->
+        <attr name="charge_fast_bg_color" format="color" />
+    </declare-styleable>
+</resources>

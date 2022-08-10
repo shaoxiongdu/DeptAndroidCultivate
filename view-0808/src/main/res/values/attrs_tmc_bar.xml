@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EasyTmcBar">
+        <!--车标-->
+        <attr name="tmc_car_drawable" format="reference" />
+        <!--宽度-->
+        <attr name="tmc_width" format="dimension" />
+        <!--高度 Demo以假数据为准，不进行高度设置-->
+        <attr name="tmc_height" format="dimension" />
+        <!--红，黄，绿，经过灰色-->
+        <attr name="tmc_jam_color" format="color" />
+        <attr name="tmc_amble_color" format="color" />
+        <attr name="tmc_unblocked_color" format="color" />
+        <attr name="tmc_passed_color" format="color" />
+    </declare-styleable>
+</resources>

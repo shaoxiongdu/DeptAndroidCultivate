@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><!--ViewGroup-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DD000000"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!--这里是全包名-->
+    <com.liauto.androidview.ChargeView
+        android:id="@+id/charge_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:charge_slow_bg_color="@color/white" />
+
+    <!--自定义光柱图-->
+    <com.liauto.androidview.EasyTmcBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        app:tmc_amble_color="@color/traffic_status_amble"
+        app:tmc_car_drawable="@mipmap/icon_tmc_v_car"
+        app:tmc_jam_color="@color/traffic_status_jam"
+        app:tmc_passed_color="@color/traffic_status_passed_color"
+        app:tmc_unblocked_color="@color/traffic_status_unblocked"
+        app:tmc_width="20dp" />
+
+</LinearLayout>

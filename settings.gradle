@@ -16,3 +16,4 @@ rootProject.name = "DeptAndroidCultivate"
 include ':app'
 include ':view-0808'
 include ':animation0810'
+include ':photo-0815'

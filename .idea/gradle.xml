@@ -12,8 +12,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/animation0810" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/designpatterns-0822" />
             <option value="$PROJECT_DIR$/photo-0815" />
             <option value="$PROJECT_DIR$/view-0808" />
+            <option value="$PROJECT_DIR$/waveview" />
           </set>
         </option>
       </GradleProjectSettings>

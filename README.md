@@ -30,3 +30,10 @@
   - 利用Compose写一个简单的列表，体验一下和之前用RecyclerView展示列表的区别
   - 使用架构组件实践一下MVVM架构
 > 暂未接触Kotlin
+
+- ### IPC 0831
+
+- 实现一个运动APP,该APP有两个进程，其中主进程用来做U展示，后台进程监听GPS轨迹并对运
+  动距离做累积计算，两进程通过aidl进行通讯，交互草图如下：
+  
+  ![image-20220901165559697](https://images-1301128659.cos.ap-beijing.myqcloud.com/shaoxiongdu/202209011655777.png)

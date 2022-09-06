@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="animation0810/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="applist-0905/src/main/res/layout/activity_main.xml" value="0.13541666666666666" />
+        <entry key="applist-0905/src/main/res/layout/app_info_item.xml" value="0.33" />
         <entry key="photo-0815/src/main/res/drawable/ic_launcher_background.xml" value="0.276" />
         <entry key="photo-0815/src/main/res/drawable/svgdemo.xml" value="0.314" />
         <entry key="photo-0815/src/main/res/layout/activity_bit_map_demo.xml" value="0.31197916666666664" />

@@ -58,11 +58,15 @@ public class MainActivity extends AppCompatActivity {
     private final AppInfoAdapter.OnUninstallClickListener mOnUninstallClickListener = (appInfo -> {
         Log.d(TAG, "try delete app :" + appInfo.packageName);
         try {
-            Process exec = Runtime.getRuntime().exec("uninstall " + appInfo.packageName);
-            Toast.makeText(this, exec.toString(), Toast.LENGTH_SHORT).show();
-            System.out.println(exec);
+            Runtime.getRuntime().exec("sh -c shell pm uninstall --user 0 " + appInfo.packageName);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        updateAppList();
     });
+
+    private void updateAppList() {
+        mAllAppInfo = mAppInfoUtil.getAllAppInfo(this);
+        mAppInfoAdapter.notifyDataSetChanged();
+    }
 }

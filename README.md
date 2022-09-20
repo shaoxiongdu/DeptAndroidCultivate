@@ -44,11 +44,9 @@
 
 - ### 系统稳定性分析 0920
 
-  #### 1. 写出4种类型的anr，找到anr文件并进行分析，写出分析过程与结论。
+  #### 写出两种oom类型error，并通过trace或heap文件进行分析，写出分析过程与结论。
 
-  #### 2. 写出两种oom类型error，并通过trace或heap文件进行分析，写出分析过程与结论。
-
-  ##### 2.1 模拟oom: stackoverflow
+  ##### 1 模拟oom: stackoverflow
 
   ```java
   /**
@@ -77,11 +75,11 @@
 
   可以看到 当count = 171001的时候，递归调用达到了默认JVM的最大栈深度。
 
-  ![image-20220920113239223](/home/lixiang/.config/Typora/typora-user-images/image-20220920113239223.png)
+  ![img_v2_0b00759d-9352-42fd-a966-2385d0a5959g](https://images-1301128659.cos.ap-beijing.myqcloud.com/shaoxiongdu/202209201639967.png)
 
 
 
-##### 2.2 模拟OOM: javaHape out of memory
+##### 2 模拟OOM: javaHape out of memory
 
 ```java
 /**
@@ -113,8 +111,10 @@ public class OOMJavaHeapActivity extends AppCompatActivity {
 
 当count=186的时候，Java堆满，报异常没有更多空间了。
 
-##### 2.3 分析过程
+![img_v2_991848e5-268b-4147-ae92-6691669b6b2g](https://images-1301128659.cos.ap-beijing.myqcloud.com/shaoxiongdu/202209201639910.png)
+
+##### 3 分析过程 以heap满为例
 
 使用as的profilter分析堆内存 发现byte类型的所占的比重最大，点进去，发现是OOMJavaHeapActivity中的BigObj对象，结合代码，就可以发现，是BigObj一直创建，list持有它的引用，导致无法GC，最终导致内存溢出。
 
-![image-20220920161605309](/home/lixiang/.config/Typora/typora-user-images/image-20220920161605309.png)
+![img_v2_59bd80d2-0d2c-4043-a3eb-9f4e0f66f74g](https://images-1301128659.cos.ap-beijing.myqcloud.com/shaoxiongdu/202209201639423.png)

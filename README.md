@@ -125,17 +125,17 @@ public class OOMJavaHeapActivity extends AppCompatActivity {
 
 用top查看所有服务
 
-![image-20220923090515786](/home/workspace/DeptAndroidCultivate/README.assets/image-20220923090515786.png)
+
 
 用pidstat -t -p 6480查看权限管理PermissionController的部分 
 
-![image-20220923090646244](/home/workspace/DeptAndroidCultivate/README.assets/image-20220923090646244.png)
+![image-20220923090646244](./README.assets/image-20220923090646244.png)
 
 可以看到占用cpu最大的线程是ssioncontroller。跑在3核上。
 
 查看权限管理的进程上下文切换次数
 
-![image-20220923090944818](/home/workspace/DeptAndroidCultivate/README.assets/image-20220923090944818.png)
+![image-20220923090944818](./README.assets/image-20220923090944818.png)
 
 可以看到rcu_preempt这个进程主动进行了242次上下文切换，说明它这个部分有很长时间在IO操作或者网络请求上，需要注意。
 
@@ -143,16 +143,16 @@ public class OOMJavaHeapActivity extends AppCompatActivity {
 
 vmstat 6480 查看权限管理的内存使用情况
 
-![image-20220923091315411](/home/workspace/DeptAndroidCultivate/README.assets/image-20220923091315411.png)
+![image-20220923091315411](./README.assets/image-20220923091315411.png)
 
 dumpsys meminfo 6480查看详细内存情况
 
-![image-20220923091520235](/home/workspace/DeptAndroidCultivate/README.assets/image-20220923091520235.png)
+![image-20220923091520235](./README.assets/image-20220923091520235.png)
 
 可以看到堆中实际使用的物理内存按比例分配了4392k，包括共享库一共使用了15000k。
 
 - #### io
 
-![image-20220923091813628](/home/workspace/DeptAndroidCultivate/README.assets/image-20220923091813628.png)
+![image-20220923091813628](./README.assets/image-20220923091813628.png)
 
 1. ### 对自己负责的模块做个诊断，cpu主要消耗在什么地方了？哪里可做优化减小cpu开销？
